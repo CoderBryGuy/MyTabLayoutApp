@@ -19,5 +19,10 @@ public class MainActivity extends AppCompatActivity {
         TabItem tabStatus = findViewById(R.id.status);
 
         ViewPager viewPager = findViewById(R.id.viewPager);
+        MyPagerAdapter pagerAdapter = new MyPagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
+        viewPager.setAdapter(pagerAdapter);
+
+        //it is used to join tablayout with viewpager
+        tabLayout.setupWithViewPager(viewPager);
     }
 }
